@@ -15,4 +15,8 @@ function CheckQuestion(userAnswer, correctAnswer) {
   return false;
 }
 
-export { AskQuestion, CheckQuestion };
+function getRandNumber(start, N) {
+  return Math.floor(Math.random() * N) + start;
+}
+
+export { AskQuestion, CheckQuestion, getRandNumber };

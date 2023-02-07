@@ -2,7 +2,7 @@
 
 import GreetUser from '../src/cli.js';
 
-import { AskQuestion, CheckQuestion } from '../src/common.js';
+import { AskQuestion, CheckQuestion, getRandNumber } from '../src/common.js';
 
 let countCorrectAnswers = 0;
 
@@ -11,8 +11,8 @@ const username = GreetUser();
 console.log('Find the greatest common divisor of given numbers.');
 
 while (countCorrectAnswers < 3) {
-  const firstTerm = Math.round(Math.random() * 100);
-  const secondTerm = Math.round(Math.random() * 100);
+  const firstTerm = getRandNumber(0, 100);
+  const secondTerm = getRandNumber(0, 100);
 
   let maxDivider = Math.min(firstTerm, secondTerm);
   while ((firstTerm % maxDivider !== 0 || secondTerm % maxDivider !== 0)) {
