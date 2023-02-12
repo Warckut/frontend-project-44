@@ -20,7 +20,7 @@ function Core(gameDescription, generateTask) {
       countCorrectAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${username}!`);
     }
   }
