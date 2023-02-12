@@ -1,20 +1,5 @@
 #!/usr/bin/env node
 
-import GreetUser from '../src/cli.js';
+import startEvenGame from '../src/games/even.js';
 
-import { AskQuestion, CheckQuestion, getRandNumber } from '../src/common.js';
-
-let countCorrectAnswers = 0;
-
-const username = GreetUser();
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-while (countCorrectAnswers < 3) {
-  const randomNumber = getRandNumber(0, 100);
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  const userAnswer = AskQuestion(randomNumber);
-  countCorrectAnswers += CheckQuestion(userAnswer, correctAnswer) ? 1 : 0;
-}
-
-console.log(`Congratulations, ${username}`);
+startEvenGame();
