@@ -21,11 +21,15 @@ function Core(gameDescription, generateTask) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${username}!`);
+      break;
     }
   }
 
-  console.log(`Congratulations, ${username}!`);
+  if (countCorrectAnswers === 3) {
+    console.log(`Congratulations, ${username}!`);
+  } else {
+    console.log(`Let's try again, ${username}!`);
+  }
 }
 
 export default Core;
