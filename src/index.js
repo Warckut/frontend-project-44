@@ -6,7 +6,7 @@ function Core(gameDescription, generateTask) {
   console.log('Welcome to the Brain Games!'); // приветствие
 
   const username = readlineSync.question('May I have your name? '); // получаем имя user
-  console.log(`Hello, ${username}`);
+  console.log(`Hello, ${username}!`);
 
   console.log(gameDescription); // описание задачи
 
