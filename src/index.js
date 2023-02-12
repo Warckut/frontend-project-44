@@ -25,7 +25,7 @@ function Core(gameDescription, generateTask) {
     }
   }
 
-  console.log(`Congratulations, ${username}`);
+  console.log(`Congratulations, ${username}!`);
 }
 
 export default Core;
