@@ -1,5 +1,9 @@
 import { startGame, randNumber } from '../index.js';
 
+function findMemberSequence(seq, index, step) {
+  return index === seq.length - 1 ? seq[index - 1] + step : seq[index + 1] - step;
+}
+
 function generateTask() {
   const progrLength = randNumber(5, 10);
   const progrInit = randNumber(0, 50);
@@ -11,7 +15,7 @@ function generateTask() {
     progr[i] = i === progrIdHidden ? '..' : i * progrStep + progrInit;
   }
 
-  const correctAnswer = progr[progrIdHidden - 1] + progrStep;
+  const correctAnswer = findMemberSequence(progr, progrIdHidden, progrStep);
 
   const condition = progr.join(' ');
 
