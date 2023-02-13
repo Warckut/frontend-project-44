@@ -11,7 +11,7 @@ function generateTask() {
     progr[i] = i === progrIdHidden ? '..' : i * progrStep + progrInit;
   }
 
-  const correctAnswer = progr[progrIdHidden];
+  const correctAnswer = progr[progrIdHidden - 1] + progrStep;
 
   const condition = progr.join(' ');
 
