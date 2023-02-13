@@ -1,33 +1,33 @@
-import Core from '../index.js';
+import { startGame, randNumber } from '../index.js';
+
+function solveTask(numberOperation, firstTerm, secondTerm) {
+  switch (numberOperation) {
+    case 0:
+      return firstTerm + secondTerm;
+    case 1:
+      return firstTerm - secondTerm;
+    case 2:
+      return firstTerm * secondTerm;
+    default:
+      return null;
+  }
+}
 
 function generateTask() {
-  const firstTerm = Math.floor(Math.random() * 10) + 1;
-  const secondTerm = Math.floor(Math.random() * 10) + 1;
-  const randNumberOp = Math.floor((Math.random() * 100) % 3);
+  const firstTerm = randNumber(1, 10);
+  const secondTerm = randNumber(1, 10);
+  const randNumberOp = randNumber(0, 100) % 3;
 
   const sign = ['+', '-', '*'][randNumberOp];
   const expression = `${firstTerm} ${sign} ${secondTerm}`;
-  let correctAnswer;
+  const correctAnswer = solveTask(randNumberOp, firstTerm, secondTerm);
 
-  switch (randNumberOp) {
-    case 0:
-      correctAnswer = firstTerm + secondTerm;
-      break;
-    case 1:
-      correctAnswer = firstTerm - secondTerm;
-      break;
-    case 2:
-      correctAnswer = firstTerm * secondTerm;
-      break;
-    default:
-  }
-
-  return [expression, correctAnswer]; // условие, правильный ответ
+  return [expression, correctAnswer.toString()]; // условие, правильный ответ
 }
 
 function startCalcGame() {
   const gameDescription = 'What is the result of the expression?';
-  Core(gameDescription, generateTask);
+  startGame(gameDescription, generateTask);
 }
 
 export default startCalcGame;
