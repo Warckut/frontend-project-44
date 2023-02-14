@@ -7,12 +7,12 @@ function generateTask() {
   const indexHidden = randNumber(0, length);
   const progr = getRandSequence(step, length);
 
-  const correctAnswer = progr[indexHidden];
+  const correctAnswer = progr[indexHidden].toString();
   progr[indexHidden] = '..';
 
   const condition = progr.join(' ');
 
-  return [condition, correctAnswer.toString()]; // условие, правильный ответ
+  return [condition, correctAnswer]; // условие, правильный ответ
 }
 
 function startProgressionGame() {
