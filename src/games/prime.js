@@ -1,13 +1,17 @@
-import { startGame, randNumber } from '../index.js';
+import startGame from '../index.js';
+import { randNumber } from '../generationRandNumbers.js';
 
 function isPrime(number) {
+  if (number <= 1) return false;
   const sqrtNumber = Math.sqrt(number);
+
   for (let i = 2; i <= sqrtNumber; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-  return number > 1;
+
+  return true;
 }
 
 function generateTask() {

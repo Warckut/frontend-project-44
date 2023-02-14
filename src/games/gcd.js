@@ -1,26 +1,18 @@
-import { startGame, randNumber } from '../index.js';
+import startGame from '../index.js';
+import { randNumber } from '../generationRandNumbers.js';
 
-function solveTask(firstTerm, secondTerm) {
-  let a = firstTerm;
-  let b = secondTerm;
-
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
-    } else {
-      b %= a;
-    }
-  }
-
-  return a + b;
+function FindDivider(a, b) {
+  if (b === 0) return a;
+  const r = a % b;
+  return FindDivider(b, r);
 }
 
 function generateTask() {
-  const firstTerm = randNumber(0, 100);
-  const secondTerm = randNumber(0, 100);
-  const condition = `${firstTerm} ${secondTerm}`;
+  const a = randNumber(0, 100);
+  const b = randNumber(0, 100);
+  const condition = `${a} ${b}`;
 
-  const maxDivider = solveTask(firstTerm, secondTerm).toString();
+  const maxDivider = FindDivider(...[a, b].sort((i, j) => j - i)).toString();
 
   return [condition, maxDivider]; // условие, правильный ответ
 }

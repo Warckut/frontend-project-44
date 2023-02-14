@@ -1,12 +1,13 @@
-import { startGame, randNumber } from '../index.js';
+import startGame from '../index.js';
+import { randNumber } from '../generationRandNumbers.js';
 
-function solveTask(numberOperation, firstTerm, secondTerm) {
-  switch (numberOperation) {
-    case 0:
+function solveTask(operation, firstTerm, secondTerm) {
+  switch (operation) {
+    case '+':
       return firstTerm + secondTerm;
-    case 1:
+    case '-':
       return firstTerm - secondTerm;
-    case 2:
+    case '*':
       return firstTerm * secondTerm;
     default:
       return null;
@@ -16,13 +17,12 @@ function solveTask(numberOperation, firstTerm, secondTerm) {
 function generateTask() {
   const firstTerm = randNumber(1, 10);
   const secondTerm = randNumber(1, 10);
-  const randNumberOp = randNumber(0, 100) % 3;
+  const randOeration = ['+', '-', '*'][randNumber(0, 100) % 3];
 
-  const sign = ['+', '-', '*'][randNumberOp];
-  const expression = `${firstTerm} ${sign} ${secondTerm}`;
-  const correctAnswer = solveTask(randNumberOp, firstTerm, secondTerm);
+  const expression = `${firstTerm} ${randOeration} ${secondTerm}`;
+  const correctAnswer = solveTask(randOeration, firstTerm, secondTerm).toString();
 
-  return [expression, correctAnswer.toString()]; // условие, правильный ответ
+  return [expression, correctAnswer]; // условие, правильный ответ
 }
 
 function startCalcGame() {

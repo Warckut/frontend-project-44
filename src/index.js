@@ -1,9 +1,5 @@
 import readlineSync from 'readline-sync';
 
-function randNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
 function startGame(gameDescription, generateTask) {
   let countCorrectAnswers = 0; // начальное кол-во правильных ответов
   const maxCountRounds = 3;
@@ -35,4 +31,4 @@ function startGame(gameDescription, generateTask) {
   }
 }
 
-export { startGame, randNumber };
+export default startGame;

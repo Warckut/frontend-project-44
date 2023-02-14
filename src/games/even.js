@@ -1,12 +1,13 @@
-import { startGame, randNumber } from '../index.js';
+import startGame from '../index.js';
+import { randNumber } from '../generationRandNumbers.js';
 
 function isEven(number) {
-  return number % 2 === 0 ? 'yes' : 'no';
+  return number % 2 === 0;
 }
 
 function generateTask() {
   const randomNumber = randNumber(0, 100);
-  const correctAnswer = isEven(randomNumber);
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return [randomNumber, correctAnswer]; // условие, правильный ответ
 }
 
