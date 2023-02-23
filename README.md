@@ -9,7 +9,5 @@ brain-gcd:
 [![asciicast](https://asciinema.org/a/mXOqR0F4aggny3WVYOxMBLLW1.png)](https://asciinema.org/a/mXOqR0F4aggny3WVYOxMBLLW1)  
 brain-progression:  
 [![asciicast](https://asciinema.org/a/XKE6s0u9L4hjwPibcOpBdkuV5.png)](https://asciinema.org/a/XKE6s0u9L4hjwPibcOpBdkuV5)  
-brain-progression:  
-[![asciicast](https://asciinema.org/a/XKE6s0u9L4hjwPibcOpBdkuV5.png)](https://asciinema.org/a/XKE6s0u9L4hjwPibcOpBdkuV5)  
 brain-prime:  
-![asciicast](https://asciinema.org/a/afnS30lkNjDqYzB4EwQHhpJFm.png)](https://asciinema.org/a/afnS30lkNjDqYzB4EwQHhpJFm)  
+[![asciicast](https://asciinema.org/a/afnS30lkNjDqYzB4EwQHhpJFm.png)](https://asciinema.org/a/afnS30lkNjDqYzB4EwQHhpJFm)  
