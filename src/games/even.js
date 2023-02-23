@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import { randNumber } from '../generationRandNumbers.js';
+import randNumber from '../utils.js';
 
 function isEven(number) {
   return number % 2 === 0;

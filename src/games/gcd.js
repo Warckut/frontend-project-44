@@ -1,10 +1,10 @@
 import startGame from '../index.js';
-import { randNumber } from '../generationRandNumbers.js';
+import randNumber from '../utils.js';
 
-function FindDivider(a, b) {
+function findDivider(a, b) {
   if (b === 0) return a;
   const r = a % b;
-  return FindDivider(b, r);
+  return findDivider(b, r);
 }
 
 function generateTask() {
@@ -12,7 +12,7 @@ function generateTask() {
   const b = randNumber(0, 100);
   const condition = `${a} ${b}`;
 
-  const maxDivider = FindDivider(...[a, b].sort((i, j) => j - i)).toString();
+  const maxDivider = findDivider(...[a, b].sort((i, j) => j - i)).toString();
 
   return [condition, maxDivider]; // условие, правильный ответ
 }

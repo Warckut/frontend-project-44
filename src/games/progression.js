@@ -1,5 +1,16 @@
-import { getRandSequence, randNumber } from '../generationRandNumbers.js';
+import randNumber from '../utils.js';
 import startGame from '../index.js';
+
+function getRandSequence(step, n) {
+  const progrInit = randNumber(0, 50);
+  const progr = [];
+
+  for (let i = 0; i < n; i += 1) {
+    progr[i] = i * step + progrInit;
+  }
+
+  return progr;
+}
 
 function generateTask() {
   const length = randNumber(5, 10);
